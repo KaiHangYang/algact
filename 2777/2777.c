@@ -24,6 +24,7 @@ int query(struct Node * node, int left, int right);
 int getnum(int num);
 
 int main() {
+    freopen("tmp", "r", stdin);
 	scanf("%d %d %d", &L, &T, &O);
     getchar();
 
@@ -42,7 +43,7 @@ int main() {
                 end = tmp;
             }
 
-            draw(tree, start, end, color);
+            draw(tree, start, end, (1 << (color-1)));
 			
 		}
 		else if (ch == 'P') {
