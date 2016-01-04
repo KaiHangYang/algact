@@ -1,10 +1,11 @@
-#include <iostream>
-#include <cstdio>
-#include <cstring>
+#include <stdio.h>
+#include <string.h>
 
-using namespace std;
 
 #define MAX 100002
+typedef char bool;
+#define true 1
+#define false 0
 struct Node {
 	int color;
 	int left, right; // 表示的范围
@@ -28,8 +29,8 @@ int main() {
 
     //build the line tree
     tree_build(tree, 1, L);
-
-	for (int i=0; i != O; ++i) {
+    int i;
+	for (i=0; i != O; ++i) {
 		scanf("%c", &ch);
 		if (ch == 'C') {
 			// 添加颜色
@@ -93,7 +94,9 @@ void draw(struct Node * node, int left, int right, int color) {
     
     if (node->stop) {
         node->stop = false;
+        node->nleft->color = node->color;
         node->nleft->stop = true;
+        node->nright->color = node->color;
         node->nright->stop = true;
     }
 
