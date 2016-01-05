@@ -17,17 +17,19 @@ int L, T=0, O;
 char ch;
 int start, end, color;
 
-int num = 0;
 void tree_build(struct Node * node, int left, int right);
 void draw(struct Node * node, int left, int right, int color);
 int query(struct Node * node, int left, int right);
 int getnum(int num);
 
+
+int num;
+
 int main() {
     //freopen("tmp", "r", stdin);
 	scanf("%d %d %d", &L, &T, &O);
     getchar();
-
+    num = 0;
     //build the line tree
     tree_build(tree, 1, L);
     int i;
@@ -120,7 +122,7 @@ int query(struct Node * node, int left, int right) {
     if (node->stop) {
         return node->color;
     }
-    if (node->left == left, node->right == right) {
+    if (node->left == left && node->right == right) {
         return node->color;
     }
 
