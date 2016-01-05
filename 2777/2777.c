@@ -24,7 +24,7 @@ int query(struct Node * node, int left, int right);
 int getnum(int num);
 
 int main() {
-    freopen("tmp", "r", stdin);
+    //freopen("tmp", "r", stdin);
 	scanf("%d %d %d", &L, &T, &O);
     getchar();
 
